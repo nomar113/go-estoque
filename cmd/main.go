@@ -38,4 +38,11 @@ func main() {
 	for _, item := range estoque.ListItems() {
 		fmt.Printf("ID: %d | Item: %s | Quantidade: %d | Preço: %.2f\n", item.ID, item.Name, item.Quantity, item.Price)
 	}
+	itemParaBuscar, err := services.FindBy(itens, func(item models.Item) bool {
+		return item.Name == "Fone"
+	})
+	if err != nil {
+		fmt.Println(err)
+	}
+	fmt.Println("Item encontrado: ", itemParaBuscar)
 }
