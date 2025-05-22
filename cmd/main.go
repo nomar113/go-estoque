@@ -45,4 +45,12 @@ func main() {
 		fmt.Println(err)
 	}
 	fmt.Println("Item encontrado: ", itemParaBuscar)
+	fmt.Println()
+	alura := services.Fornecedor{
+		CNPJ:    "1234",
+		Contato: "11970707070",
+		Cidade:  "São Paulo",
+	}
+	fmt.Println(alura.GetInfo())
+	fmt.Println(alura.VerificarDisponilidade(29, 30))
 }
